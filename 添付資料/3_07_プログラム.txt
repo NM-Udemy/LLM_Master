@@ -1,0 +1,58 @@
+import random
+
+# 無駄な変数の初期化
+unused_var = 0
+another_unused_var = "I am not used"
+
+def calculate_something():
+    # 使われない変数の例
+    unused_number = 100
+    another_unused_number = 200
+
+    # 実際に使われる変数
+    useful_number = 50
+
+    # 無駄な計算
+    for i in range(10):
+        unused_number += i
+        another_unused_number -= i
+        unused_number /= i
+
+    # 実際に意味のある計算
+    result = useful_number * 2
+    return result
+
+def print_hello_world():
+    # Hello Worldを出力するだけの関数
+    print("Hello, World!")
+
+def do_nothing():
+    # 何もしない関数
+    pass
+
+def generate_random_number():
+    # ランダムな数を生成
+    number = random.randint(1, 100)
+    return number
+
+def main():
+    # メイン関数
+    print_hello_world()
+
+    result = calculate_something()
+    print(f"Result of calculation: {result}")
+
+    # 無駄なループ
+    for _ in range(5):
+        do_nothing()
+
+    # 無駄な条件文
+    if unused_var == 0:
+        print("This is useless")
+
+    random_number = generate_random_number()
+    print(f"Random number: {random_number}")
+
+# メイン関数の呼び出し
+if __name__ == "__main__":
+    main()
