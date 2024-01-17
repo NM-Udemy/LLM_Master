@@ -1,0 +1,40 @@
+import random
+
+def rock_paper_scissors():
+    # ユーザーの入力を受け付ける関数
+    def get_user_choice():
+        choice = input("石、紙、はさみのいずれかを選んでください: ").lower()
+        while choice not in ["石", "紙", "はさみ"]:
+            choice = input("無効な入力です。石、紙、はさみのいずれかを選んでください: ").lower()
+        return choice
+
+    # 勝敗を判定する関数
+    def determine_winner(user_choice, computer_choice):
+        if user_choice == computer_choice:
+            return "引き分けです。"
+        elif (user_choice == "石" and computer_choice == "はさみ") or \
+             (user_choice == "紙" and computer_choice == "石") or \
+             (user_choice == "はさみ" and computer_choice == "紙"):
+            return "あなたの勝ちです！"
+        else:
+            return "コンピューターの勝ちです。"
+
+    # コンピューターの選択をランダムに生成する関数
+    def get_computer_choice():
+        choices = ["石", "紙", "はさみ"]
+        return random.choice(choices)
+
+    # メインのゲーム関数
+    print("石紙はさみゲームへようこそ！")
+
+    user_choice = get_user_choice()
+    computer_choice = get_computer_choice()
+
+    print(f"あなたの選択: {user_choice}")
+    print(f"コンピューターの選択: {computer_choice}")
+
+    result = determine_winner(user_choice, computer_choice)
+    print(result)
+
+# ゲームを実行
+rock_paper_scissors()

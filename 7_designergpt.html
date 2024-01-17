@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Personal Blog</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+        body {
+            background-color: #e0f7fa;
+        }
+    </style>
+</head>
+<body>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong>私のブログ</strong></li>
+        </ul>
+        <ul>
+            <li><a href="#">ホーム</a></li>
+            <li><a href="#">チーム</a></li>
+            <li><a href="#">私について</a></li>
+            <li><a href="#" role="button">お問い合わせ</a></li>
+        </ul>
+    </nav>
+    <main class="container">
+        <div class="grid">
+            <section>
+                <hgroup>
+                    <h2>ブログへようこそ</h2>
+                    <h3>洞察、物語、アイデア</h3>
+                </hgroup>
+                <p>技術、旅行、個人開発など、様々なトピックを探求する私の旅にご参加ください。</p>
+                <figure>
+                    <img src="https://source.unsplash.com/random/800x600" alt="Blog Banner" />
+                    <figcaption><a href="#" target="_blank">もっと読む</a></figcaption>
+                </figure>
+                <h3>最新の投稿</h3>
+                <p>私の最新の記事と思索を発見してください。</p>
+                <h3>私について</h3>
+                <p>私の背景、興味、そして私の執筆を動かすものについてもっと知る。</p>
+            </section>
+        </div>
+    </main>
+    <section aria-label="Subscribe example">
+        <div class="container">
+            <article>
+                <hgroup>
+                    <h2>最新情報を入手</h2>
+                    <h3>ニュースレターに登録する</h3>
+                </hgroup>
+                <form class="grid">
+                    <input type="text" id="firstname" name="firstname" placeholder="お名前" aria-label="お名前" required />
+                    <input type="email" id="email" name="email" placeholder="メールアドレス" aria-label="メールアドレス" required />
+<button type="submit" onclick="event.preventDefault()">登録</button>
+</form>
+</article>
+</div>
+</section>
+<footer class="container">
+<small><a href="#">プライバシーポリシー</a> • <a href="#">利用規約</a></small>
+</footer>
+
+</body>
+</html>

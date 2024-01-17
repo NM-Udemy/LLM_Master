@@ -1,0 +1,61 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "NBlog API",
+        "version": "1.0.0",
+        "description": "API for accessing posts on NBlog with title filtering and specific post details."
+    },
+    "servers": [
+        {
+            "url": "https://www.nblog09.com/w/wp-json/wp/v2"
+        }
+    ],
+    "paths": {
+        "/posts": {
+            "get": {
+                "operationId": "listPostsByTitle",
+                "summary": "タイトルでの絞り込み",
+                "description": "タイトルを含む一覧で絞り込む",
+                "parameters": [
+                    {
+                        "name": "title__contains",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "絞り込みたいタイトル"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "タイトルに基づいた記事の一覧"
+                    }
+                }
+            }
+        },
+        "/posts/{id}": {
+            "get": {
+                "operationId": "getPostById",
+                "summary": "IDで絞り込んだページ詳細",
+                "description": "一覧から取得したIDでページの詳細を取得する",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "description": "記事のID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "指定したIDの記事の詳細"
+                    }
+                }
+            }
+        }
+    }
+}

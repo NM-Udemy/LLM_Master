@@ -1,0 +1,111 @@
+
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "情報一覧",
+    "version": "1.0.0",
+    "description": "作成者が様々な情報を提供するAPI"
+  },
+  "servers": [
+    {
+      "url": "https://api.sheety.co/5613bff8e32adaf9193ea63a7bdb1140/情報"
+    }
+  ],
+  "paths": {
+    "/レストラン": {
+      "get": {
+        "operationId": "getRestaurants",
+        "summary": "レストラン一覧を取得",
+        "responses": {
+          "200": {
+            "description": "レストランのリスト",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "menus": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "item": {
+                            "type": "string"
+                          },
+                          "price": {
+                            "type": "number"
+                          },
+                          "category": {
+                            "type": "string"
+                          },
+                          "isVegetarian": {
+                            "type": "boolean"
+                          },
+                          "id": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/映画": {
+      "get": {
+        "operationId": "getMovies",
+        "summary": "映画一覧を取得",
+        "parameters": [
+            {
+                "name": "filter[公開年]",
+                "in": "query",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "description": "公開年で絞り込む",
+                "default": 1990
+            }
+        ],
+        "responses": {
+          "200": {
+            "description": "映画のリスト",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "movies": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "title": {
+                            "type": "string"
+                          },
+                          "director": {
+                            "type": "string"
+                          },
+                          "releaseYear": {
+                            "type": "integer"
+                          },
+                          "genre": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
